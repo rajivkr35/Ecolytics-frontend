@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ecolytics</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <h2>🌿 ECOLYTICS :- Carbon Footprint Estimator</h2>
+  <section style="background: #eef4f6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+  <h3>📘 About This Project</h3>
+  <p>
+    The <strong>Carbon Footprint Estimator</strong> is a tool designed to estimate an individual's annual carbon emissions based on their lifestyle choices — including travel habits, energy consumption, food preferences, and shopping behaviors.
+  </p>
+  <p>
+  This tool is powered by a supervised machine learning model (Random Forest Regressor) trained on realistic lifestyle data. 
+  It achieved a high level of accuracy on the test set:
+</p>
+<ul>
+  <li><strong>R² Score:</strong> 0.89</li>
+  <li><strong>MAE:</strong> 0.0091 tonnes</li>
+  <li><strong>RMSE:</strong> 0.0124 tonnes</li>
+</ul>
+
+</section>
+
+  <form id="footprint-form">
+    <label>Private KM per week: <input type="number" step="0.1" name="private_km_per_week" required></label>
+    <label>Fuel Type:
+      <select name="fuel_type">
+        <option>Petrol</option>
+        <option>Diesel</option>
+        <option>Electric</option>
+        <option>CNG</option>
+      </select>
+    </label>
+    <label>Public KM per week: <input type="number" step="0.1" name="public_km_per_week" required></label>
+    <label>Electricity per month (kWh): <input type="number" name="electricity_per_month_kwh" required></label>
+    <label>Uses Renewable Energy:
+      <select name="uses_renewable_energy">
+        <option>true</option>
+        <option>false</option>
+      </select>
+    </label>
+    <label>Meat Frequency:
+      <select name="meat_frequency">
+        <option>Never</option>
+        <option>Monthly</option>
+        <option>Weekly</option>
+        <option>Daily</option>
+      </select>
+    </label>
+    <label>Dairy Frequency:
+      <select name="dairy_frequency">
+        <option>Never</option>
+        <option>Occasionally</option>
+        <option>Weekly</option>
+        <option>Daily</option>
+      </select>
+    </label>
+    <label>Short Flights per year: <input type="number" name="short_flights_per_year" required></label>
+    <label>Long Flights per year: <input type="number" name="long_flights_per_year" required></label>
+    <label>Clothing Shopping Frequency:
+      <select name="clothing_shopping_freq">
+        <option>Never</option>
+        <option>Rarely</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+      </select>
+    </label>
+    <label>Electronics Shopping Frequency:
+      <select name="electronics_shopping_freq">
+        <option>Never</option>
+        <option>Rarely</option>
+        <option>Yearly</option>
+        <option>Monthly</option>
+      </select>
+    </label>
+    <label>Recycles Regularly:
+      <select name="recycles_regularly">
+        <option>true</option>
+        <option>false</option>
+      </select>
+    </label>
+    <label>Waste (kg/week): <input type="number" step="0.1" name="waste_kg_per_week" required></label>
+    <label>Household Size: <input type="number" name="household_size" required></label>
+    <label>Home Type:
+      <select name="home_type">
+        <option>Independent</option>
+        <option>Apartment</option>
+        <option>Rented Room</option>
+        <option>Bungalow</option>
+      </select>
+    </label>
+
+    <button type="submit">Estimate</button>
+<button type="button" id="reset-btn">Reset</button>
+
+  </form>
+
+  <div class="result" id="result"></div>
+  <h3>💡 Suggestions to Reduce Your Carbon Footprint:</h3>
+<ul id="tips"></ul>
+
+
+<script src="script.js"></script>
+
+<footer class="footer">
+  <p>&copy; 2025 ECOLYTICS · Built by Rajiv Kumar · All rights reserved.</p>
+</footer>
+
+</body>
+</html>
